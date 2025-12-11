@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <title>Health care products</title>
+    <meta charset="utf-8">
+    <!-- Настройка для адаптивной верстки -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключение слайдера Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <!-- Подключение шрифта -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <!-- Подключение стилей из папки css -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__menu menu">
+          <div class="menu__body container">
+            <nav class="menu__item menu__navigation">
+              <ul>
+                <li class="menu__link"><a href="#ourblog">Our Blog</a></li>
+                <li class="menu__link"><a href="#aboutus">About Us</a></li>
+                <li class="menu__link"><a href="#contactus">Contact Us</a></li>
+              </ul>
+            </nav>
+            <div class="burger">
+              <span></span>
+            </div>
+            <div class="menu__item menu__logo">
+              <img src="img/logo_header.png" alt="Logo">
+            </div>
+            <div class="menu__item menu__utility">
+              <div class="menu__search">
+                <img src="img/icon_search.png" alt="search">
+              </div>
+              <div class="menu__cart">
+                <img src="img/icon_cart.png" alt="cart">
+              </div>
+              <div class="menu__profile">
+                <img src="img/icon_profile.png" alt="profile">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper header__slider slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide slide">
+              <div class="slide__bgr">
+                <img src="img/header_bgr.jpg" alt="slide">
+                <div class="container slide__container">
+                  <div class="slide__title">Pure CBD<br>Pure Resuts</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide slide">
+              <div class="slide__bgr">
+                <img src="img/header_bgr.jpg" alt="slide">
+                <div class="container slide__container">
+                  <div class="slide__title">Pure CBD<br>Pure Resuts<br>2</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide slide">
+              <div class="slide__bgr">
+                <img src="img/header_bgr.jpg" alt="slide">
+                <div class="container slide__container">
+                  <div class="slide__title">Pure CBD<br>Pure Resuts<br>3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider__nav">
+            <div class="swiper-button-prev"><img src="img/arrow_left.png" alt="prev"></div>
+            <div class="swiper-button-next"><img src="img/arrow_right.png" alt="next"></div>
+          </div>
+        </div>
+      </header>
+      
+      <div id="app" class="content">
+        <section class="categories">
+          <div class="categories__body container">
+            <div class="categories__category category">
+              <a href="" class="categories__link">
+                <div class="category__title">Oils & Tinctures</div>
+                <div class="category__image">
+                  <img src="img/product_category_01.png" alt="Category">
+                </div>
+              </a>
+            </div>
+            <div class="categories__category category">
+              <a href="" class="categories__link">
+                <div class="category__title">Edibles & Drinks</div>
+                <div class="category__image">
+                  <img src="img/product_category_02.png" alt="Category">
+                </div>
+              </a>
+            </div>
+            <div class="categories__category category">
+              <a href="" class="categories__link">
+                <div class="category__title">Body & Skin Care</div>
+                <div class="category__image">
+                  <img src="img/product_category_03.png" alt="Category">
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="products">
+          <div class="products__body container">
+            <div class="products__title title">Featured Products</div>
+            <div class="products__items">
+              <featured-product 
+                v-for="product in featuredProducts" 
+                :key="product.id"
+                :product="product"
+              ></featured-product>
+            </div>
+          </div>
+        </section>
+
+        <section class="blog" id="ourblog">
+          <div class="blog__body container">
+            <div class="blog__title title">Our Blog</div>
+            <div class="blog__items">
+              <blog-entry
+                v-for="entry in blogEntries"
+                :key="entry.id"
+                :entry="entry"
+              ></blog-entry>
+            </div>
+          </div>
+        </section>
+
+        <section class="instagram" id="aboutus">
+          <div class="instagram__body container">
+            <div class="instagram__image">
+              <img src="img/instagram_img_01.jpg" alt="instagram image">
+            </div>
+            <div class="instagram__image">
+              <img src="img/instagram_img_02.jpg" alt="instagram image">
+            </div>
+            <div class="instagram__image">
+              <img src="img/instagram_img_03.jpg" alt="instagram image">
+            </div>
+            <div class="instagram__image">
+              <img src="img/instagram_img_04.jpg" alt="instagram image">
+            </div>
+            <div class="instagram__image">
+              <img src="img/instagram_img_05.jpg" alt="instagram image">
+            </div>
+            <div class="instagram__image">
+              <img src="img/instagram_img_06.jpg" alt="instagram image">
+            </div>
+            <div class="instagram__text">#instagram feed</div>
+          </div>
+        </section>
+
+      </div>
+
+      <section class="subscribe" id="contactus">
+        <div class="subscribe__body container">
+          <form class="subscribe__form">
+            <div class="subscribe__label">Subscribe for a <b>Newsletter</b></div>
+            <div class="subscribe__input_body">
+              <input type="text" class="subscribe__input" placeholder="Enter your e-mail">
+              <button class="subscribe__button"><img src="img/subscribe_mail_icon.png" alt="mail"></button>
+            </div>
+            <div class="subscribe__sending-animation">
+              <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div>
+              <div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div>
+          </form>
+        </div>
+      </section>
+      
+      <footer class="footer">
+        <div class="footer__body container">
+          <div class="footer__logo">
+            <img src="img/logo_footer.png" alt="">
+          </div>
+          <div class="footer__item footer-item">
+            <div class="footer-item__title">Menu</div>
+            <ul class="footer-item__list">
+              <li><a href="#ourblog">Our Blog</a></li>
+              <li><a href="#aboutus">About Us</a></li>
+              <li><a href="#contactus">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer__item footer-item">
+            <div class="footer-item__title">About Us</div>
+            <ul class="footer-item__list">
+              <li><a href="#ourblog">Our Blog</a></li>
+              <li><a href="#aboutus">About Us</a></li>
+              <li><a href="#contactus">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer__item footer-item">
+            <div class="footer-item__title">Contact Us</div>
+            <ul class="footer-item__list">
+              <li><img src="img/icon_contacts_phone.png" alt="phone">+1 (578) 789-65-20</li>
+              <li><img src="img/icon_contacts_mail.png" alt="mail">support@kanafy.com</li>
+              <li><img src="img/icon_contacts_home.png" alt="home">1149 NW 10th Ave, St John, KS</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Подключение Vue.js -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Подключение слайдера Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- Подключение скрипта -->
+    <script src="js/script.js"></script>
+    <script>
+      const vm = app.mount('#app');
+    </script>
+  </body>
+</html>
